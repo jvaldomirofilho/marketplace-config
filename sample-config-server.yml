@@ -1,1 +1,3 @@
-marketplace-config-server
+marketplace:
+  maxOrders: 10
+  minOrders: 1
