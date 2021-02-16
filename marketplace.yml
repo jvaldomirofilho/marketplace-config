@@ -1,0 +1,33 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /marketplace-api
+spring:
+  application:
+    name: marketplace-api
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/POC_MARKETPLACE
+    username: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    show-sql: true
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/registry/eureka
